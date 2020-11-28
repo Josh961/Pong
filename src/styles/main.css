@@ -1,0 +1,36 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  background-color: #e3f6f5;
+}
+
+#canvas-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 1280px;
+  margin: 4rem 2rem 2rem 2rem;
+}
+
+.github {
+  position: absolute;
+  right: 0.75rem;
+  bottom: 0.25rem;
+  color: #728197;
+  font-family: Arial;
+  font-size: 0.75rem;
+  text-decoration: none;
+  transition: color 300ms ease;
+}
+
+.github:hover {
+  color: #a0aec0;
+}
