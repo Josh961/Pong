@@ -23,5 +23,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         npm install
+        git config --global user.email 'joshua.zky@gmail.com'
+        git config --global user.name 'Josh'
         git remote set-url origin https://josh961:$GITHUB_TOKEN@github.com/Josh961/Pong.git
         npm run deploy
