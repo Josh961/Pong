@@ -55,12 +55,16 @@ class GameScene extends Scene {
       down: Phaser.Input.Keyboard.KeyCodes.DOWN,
     });
 
-    this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ESC).on('down', () => {
-      this.scene.pause();
-      this.input.keyboard.resetKeys();
-      const pauseOverlay = this.add.renderTexture(0, 0, GAME_WIDTH, GAME_HEIGHT).fill(Color.Black, 0.25);
-      this.scene.launch('pause-scene', pauseOverlay);
-    });
+    this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ESC).on('down', () => this.pauseGame());
+    this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE).on('down', () => this.pauseGame());
+    this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER).on('down', () => this.pauseGame());
+  }
+
+  private pauseGame(): void {
+    this.scene.pause();
+    this.input.keyboard.resetKeys();
+    const pauseOverlay = this.add.renderTexture(0, 0, GAME_WIDTH, GAME_HEIGHT).fill(Color.Black, 0.25);
+    this.scene.launch('pause-scene', pauseOverlay);
   }
 
   private createBall(): void {
