@@ -63,8 +63,7 @@ class GameScene extends Scene {
   private pauseGame(): void {
     this.scene.pause();
     this.input.keyboard.resetKeys();
-    const pauseOverlay = this.add.renderTexture(0, 0, GAME_WIDTH, GAME_HEIGHT).fill(Color.Black, 0.25);
-    this.scene.launch('pause-scene', pauseOverlay);
+    this.scene.launch('pause-scene');
   }
 
   private createBall(): void {
@@ -154,6 +153,7 @@ class GameScene extends Scene {
     }
     else if (down.isDown) {
       paddle.body.velocity.y = this.PADDLE_SPEED;
+      paddle.body.velocity.y = this.PADDLE_SPEED;
     }
     else {
       paddle.body.velocity.y = 0;
@@ -176,11 +176,10 @@ class GameScene extends Scene {
   }
 
   private checkScore(): void {
-    if (this.leftScore === 10 || this.rightScore === 10 ) {
+    if (this.leftScore === 1 || this.rightScore === 10 ) {
       this.ball.destroy();
       this.scene.pause();
-      const pauseOverlay = this.add.renderTexture(0, 0, GAME_WIDTH, GAME_HEIGHT).fill(Color.Black, 0.25);
-      this.scene.launch('score-scene', {pauseOverlay, leftWon: this.leftScore > this.rightScore});
+      this.scene.launch('score-scene', {leftWon: this.leftScore > this.rightScore});
     }
   }
 }

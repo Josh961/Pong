@@ -26,7 +26,6 @@ class MenuScene extends Scene {
       .on('pointerover', () => onePlayerButton.setTexture('one-player-button-hover'))
       .on('pointerout', () => onePlayerButton.setTexture('one-player-button'))
       .on('pointerdown', () => {
-        this.scene.stop();
         this.scene.start('game-scene', {singlePlayer: true});
       });
 
@@ -35,7 +34,6 @@ class MenuScene extends Scene {
       .on('pointerover', () => twoPlayerButton.setTexture('two-player-button-hover'))
       .on('pointerout', () => twoPlayerButton.setTexture('two-player-button'))
       .on('pointerdown', () => {
-        this.scene.stop();
         this.scene.start('game-scene', {singlePlayer: false});
       });
 
