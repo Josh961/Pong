@@ -176,7 +176,7 @@ class GameScene extends Scene {
   }
 
   private checkScore(): void {
-    if (this.leftScore === 1 || this.rightScore === 10 ) {
+    if (this.leftScore === 10 || this.rightScore === 10 ) {
       this.ball.destroy();
       this.scene.pause();
       this.scene.launch('score-scene', {leftWon: this.leftScore > this.rightScore});
